@@ -16,7 +16,6 @@ const refs = {
 refs.startBtn.setAttribute("disabled", "")
 let intervalId;
 let isActive = false;
-console.log('isActive: ', isActive);
 
 const options = {
     enableTime: true,
@@ -24,7 +23,7 @@ const options = {
     defaultDate: new Date(),
     minuteIncrement: 1,
     onClose(selectedDates) {
-      console.log(selectedDates[0]);
+      
       if (selectedDates[0] < Date.now()) {
         refs.startBtn.setAttribute("disabled", "")
         return Notify.failure("Please choose a date in the future", {position: "center-center",clickToClose: true, fontSize: '26px', width: 'fit-content'})
