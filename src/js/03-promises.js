@@ -12,16 +12,16 @@ form.addEventListener('submit', (e)=> {
 
   for (let i = 0; i < eAmount; i++) {
     if (i !== 0) {
-      createPromise(i, (eDelay + eStep * i)).then((value) => {
-        Notify.success(`✅ Fulfilled promise ${value.position} in ${value.delay}ms`);
+      createPromise(i, (eDelay + eStep * (i))).then((value) => {
+        Notify.success(`✅ Fulfilled promise ${value.position+1} in ${value.delay}ms`);
       }).catch((err) => {
-        Notify.failure(`❌ Rejected promise ${err.position} in ${err.delay}ms`);
+        Notify.failure(`❌ Rejected promise ${err.position+1} in ${err.delay}ms`);
       });
     }else{
     createPromise(i, eDelay).then((value) => {
-      Notify.success(`✅ Fulfilled promise ${value.position} in ${value.delay}ms`);
+      Notify.success(`✅ Fulfilled promise ${1} in ${value.delay}ms`);
     }).catch((err) => {
-      Notify.failure(`❌ Rejected promise ${err.position} in ${err.delay}ms`);
+      Notify.failure(`❌ Rejected promise ${1} in ${err.delay}ms`);
     });
     }
   }})
